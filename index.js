@@ -10,12 +10,8 @@ dotenv.config({ path: "./configuration/.env" });
 const port = process.env.PORT || 8080
 
 app.use(express.json());
-const corsOptions = {
-  credentials: true, // Allow credentials like cookies
-  methods: ['GET', 'POST', 'PUT', 'DELETE'], // Allow these HTTP methods
-  allowedHeaders: ['Content-Type', 'Authorization'], // Ensure required headers are allowed
-};
-app.use(cors(corsOptions))
+
+app.use(cors)
 app.use(cookieparser());
 
 
